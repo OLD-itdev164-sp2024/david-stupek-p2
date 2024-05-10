@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby" 
+import { GatsbyImage } from "gatsby-plugin-image"
 
 
 import Layout from "../components/layout"
@@ -13,8 +14,15 @@ const IndexPage = ({ data }) => (
       {
         data.allContentfulKnife.edges.map(edge => (
           <li key={edge.node.id}>
-            
             <Link to={`/knife/${edge.node.slug}/`}>{edge.node.Knife}</Link>
+            <div>
+              <GatsbyImage
+                image={edge.node.heroImage.gatsbyImageData}
+              />
+            </div>
+            <div>
+              {edge.node.body} 
+            </div>
           </li>
         ))
       }
@@ -29,10 +37,13 @@ query MyQuery {
   allContentfulKnife {
     edges {
       node {
-        Knife
-        body
         id
+        Knife
         slug
+        body
+        heroImage {
+          gatsbyImageData(layout: FIXED, placeholder: DOMINANT_COLOR, width: 300)
+        }
       }
     }
   }
