@@ -7,7 +7,7 @@ const KnifePage = ({ data }) => {
 
     return (
         <Layout>
-            <h1>(Knife)</h1>
+            <h1>{Knife}</h1>
         </Layout>
     )
 }
