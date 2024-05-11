@@ -45,6 +45,7 @@ const KnifePage = ({ data }) => {
                 <li>Description: {body}</li>
                 <li>Material: {material}</li>
             </ul>
+            <div id="paypal-button-container"></div>
         </Layout>
     );
 }
