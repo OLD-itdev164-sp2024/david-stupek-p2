@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 
 const Contact = ({ data }) => { 
-    const  { name, company, address } = data.site.siteData.Contact
+    const  { name, company, address } = data.site.siteMetadata.contact
     return (
         <Layout>
             <Seo title="Contact Us" />
@@ -14,9 +14,15 @@ const Contact = ({ data }) => {
             <div>{company}</div>
             <div>{`C/O ${name}`}</div>
             <div>{address}</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet bibendum enim facilisis gravida. Sed id sagittis ipsum. Nullam commodo sem arcu, et sollicitudin arcu aliquet non. Curabitur sit amet massa nec sem facilisis scelerisque eget et arcu. Fusce mollis lacus nec elit tristique, at condimentum dolor viverra. Aenean justo felis, viverra at volutpat a, vehicula eget dolor. Praesent fringilla dapibus dignissim. Pellentesque quis lacinia ex. Sed et massa felis.
+              Nunc velit risus, dapibus non interdum at, lacinia quis orci. Sed vel quam vitae ligula blandit sagittis. Pellentesque consequat, mauris sit amet vehicula fermentum, quam felis hendrerit sapien, eget auctor velit ligula nec ligula
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet bibendum enim facilisis gravida. Sed id sagittis ipsum. Nullam commodo sem arcu, et sollicitudin arcu aliquet non. Curabitur sit amet massa nec sem facilisis scelerisque eget et arcu. Fusce mollis lacus nec elit tristique, at condimentum dolor viverra. Aenean justo felis, viverra at volutpat a, vehicula eget dolor. Praesent fringilla dapibus dignissim. Pellentesque quis lacinia ex. Sed et massa felis.
+              Nunc velit risus, dapibus non interdum at, lacinia quis orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquet bibendum enim facilisis gravida. Sed id sagittis ipsum. Nullam commodo sem arcu, et sollicitudin arcu aliquet non. Curabitur sit amet massa nec sem facilisis scelerisque eget et arcu. Fusce mollis lacus nec elit tristique, at condimentum dolor viverra. Aenean justo felis, viverra at volutpat a, vehicula eget dolor. Praesent fringilla dapibus dignissim. Pellentesque quis lacinia ex. Sed et massa felis.
+              Nunc velit risus, dapibus non interdum at, lacinia quis orci. 
+            </p>
             <div style={{ maxWidth: `300`, marginBottom: `1.45rem `}}>
                 <StaticImage
-                src="../images/gatsby-icon.png"
+                src="https://2.gravatar.com/userimage/159925446/dd24170f05af28b15aa1f800e02fccb2?size=600"
                 width={300}
                 quality={95}
                 formats={["auto", "webp", "avif"]}
@@ -29,7 +35,7 @@ const Contact = ({ data }) => {
     )
 }
 
-export default Contact 
+export default Contact
 
 export const query = graphql`
 query {

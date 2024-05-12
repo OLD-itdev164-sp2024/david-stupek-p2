@@ -43,6 +43,8 @@ body {
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
+  height: 100%;
+  margin: 0;
 }
 a {
   background-color: transparent;
@@ -222,4 +224,14 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: none;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }

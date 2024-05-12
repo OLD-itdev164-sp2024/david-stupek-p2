@@ -78,7 +78,7 @@ const Header = ({ siteTitle }) => {
       <NavLinks isOpen={isOpen} style={{ display: isOpen ? 'flex' : 'none' }}>
         <StyledLink to="/about">About</StyledLink>
         <StyledLink to="/products">Products</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
+        <StyledLink to="/contacts">Contact</StyledLink>
       </NavLinks>
     </StyledHeader>
   );
