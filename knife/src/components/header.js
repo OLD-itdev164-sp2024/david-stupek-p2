@@ -5,14 +5,16 @@ import styled from "styled-components"
 import { useState } from "react";  
 
 const StyledHeader = styled.header`
+  position: relative; // Ensure this is here
   margin: 0 auto;
-  padding: var(--space-4) var()(--size-gutter);
+  padding: var(--space-4) var(--size-gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 50px;
   background: ${props => props.theme.header.backgroundColor};
 `
+
 
 const StyledLink = styled(Link)`
 font-size: 25px;
@@ -31,7 +33,7 @@ const HamburgerIcon = styled.button`
   justify-content: space-around;
   height: 25px;
   width: 35px;
-  z-index: 10;
+  z-index: 30;
 
   span {
     display: block;
@@ -42,24 +44,22 @@ const HamburgerIcon = styled.button`
 `
 
 const NavLinks = styled.nav`
-  display: ${props => props.isOpen ? 'flex' : 'none'}; // Default hidden
+  display: ${props => props.isOpen ? 'flex' : 'none'};
+  flex-direction: column;
   align-items: center;
   position: absolute;
   top: 100%;
   left: 0;
+  right: 0;
+  padding-top: 20px; // Add some space at the top inside the container
   background: ${props => props.theme.header.backgroundColor};
-  width: 100%;
-  flex-direction: column;
-  @media (min-width: 768px) {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    justify-content: flex-end;
-    background: none;
-  }
+  z-index: 20;
+  transition: all 0.3s ease;
 `
 
-const Header = ({ siteTitle }) => {
+
+
+const Header = ({ siteTitle }) => {   
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -67,19 +67,23 @@ const Header = ({ siteTitle }) => {
       <StyledLink to="/">
         {siteTitle}
       </StyledLink>
-      <HamburgerIcon onClick={() => setIsOpen(!isOpen)}>
+            <HamburgerIcon onClick={() => {
+        console.log('Current state:', isOpen, '— Toggling state now.');
+        setIsOpen(!isOpen);
+      }}>
         <span></span>
         <span></span>
         <span></span>
       </HamburgerIcon>
-      <NavLinks isOpen={isOpen}>
+      <NavLinks isOpen={isOpen} style={{ display: isOpen ? 'flex' : 'none' }}>
         <StyledLink to="/about">About</StyledLink>
         <StyledLink to="/products">Products</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
+        <StyledLink to="/contacts">Contact</StyledLink>
       </NavLinks>
     </StyledHeader>
   );
 }
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string

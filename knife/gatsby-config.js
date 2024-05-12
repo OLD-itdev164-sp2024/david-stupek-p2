@@ -9,14 +9,14 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Jasons Knife Store`,
+    title: `Davids Knife Store`,
     description: `This is a ecommerce store for knifes!`,
     author: `@Webstupek`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     contact: {
       name: "David Stupek",
-      company: "Hein LLC",
-      address: "Some Swamp In LA, USA"
+      company: "Stupek LLC",
+      address: "Milwaukee WI, USA"
     }
   },
   plugins: [

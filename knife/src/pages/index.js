@@ -15,13 +15,9 @@ const IndexPage = ({ data }) => (
         data.allContentfulKnife.edges.map(edge => (
           <li key={edge.node.id}>
             <Link to={`/knife/${edge.node.slug}/`}>{edge.node.Knife}</Link>
+           
             <div>
-              <GatsbyImage
-                image={edge.node.heroImage.gatsbyImageData}
-              />
-            </div>
-            <div>
-              {edge.node.body} 
+              {edge.node.description} 
             </div>
           </li>
         ))
@@ -40,7 +36,7 @@ query MyQuery {
         id
         Knife
         slug
-        body
+        description
         heroImage {
           gatsbyImageData(layout: FIXED, placeholder: DOMINANT_COLOR, width: 300)
         }
